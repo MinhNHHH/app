@@ -1,0 +1,45 @@
+{% extends "webapp/layout.html" %}
+{% load static %}
+{% block body %}
+<script src="{% static 'webapp/account_1.js'%}"></script>
+<div class="container-fluid" style="margin-top: 50px;">
+    <div class="row justify-content-center">
+        <div class="card my-5 p-5">
+            <div class="row main">
+                <h2>Add wallet first!</h2>
+            </div>
+            <br>
+            <form class="form-card">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group"> <input type="text" class="form-control p-6" id="budget" required><label
+                                class="form-control-placeholder p-0" for="number">Budget</label> </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group"> <input type="text" class="form-control p-6" id="income" required><label
+                                class="form-control-placeholder p-0" for="name">Income</label> </div>
+                    </div>
+                </div>                
+                <div class="row lrow mt-4 mb-3">
+                    <div class="col-sm-10 col-12">
+                        <h3>{{username}}</h3>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-sm-12"> <button type="button" class="btn btn-primary btn-block" onclick="save()" id = "334">Save</button> </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    var budget = document.getElementById("budget");
+    var income = document.getElementById("income");
+    var input = document.getElementById("income");
+    document.getElementById("budget").value = "0";
+    document.getElementById("income").value = "0";
+    enter();
+</script>
+{% endblock %}

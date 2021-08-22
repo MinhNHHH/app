@@ -1,0 +1,149 @@
+.linechart {
+    background-color: white;
+    width: 600px;
+    position: relative;
+    margin-left: 160px;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: auto;
+}
+
+.title {
+    margin: 0px;
+    background-color: black;
+    color: white;
+    text-align: left;
+    font-size: 30px;
+    position: relative;
+}
+
+.piechart {
+    background-color: white;
+    width: 600px;
+    position: relative;
+    padding: 0px;
+    margin-left: 160px;
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
+.containborder {
+    position: relative;
+    height: 100px;
+    margin-left: 150px;
+    display: inline-flex;
+}
+
+.containborder-body {
+    background-color: white;
+    margin-left: 40px;
+    margin-top: 10px;
+    position: relative;
+    height: 100px;
+    width: 300px;
+    border-style: outset
+}
+
+.row_content {
+    height: 100%;
+    width: 100%;
+}
+
+.titlename {
+    background-color: black;
+    color: white;
+    border: 1px solid;
+}
+
+.row_table {
+    background-color: black;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.content_table-tr{
+    position: absolute;
+    width: 100%;
+    padding: 22.5px;
+    text-align: center;
+}
+.table-container{
+    position: relative;
+    width: 485px;
+    left: 770px;
+    bottom: 625px;
+    height: 620px;
+}
+.my-custom-scrollbar {
+    position: relative;
+    overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}
+.history{
+    margin: 0px;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+}
+
+
+.table-scroll {
+    width: 100%;
+    display: block;
+    empty-cells: show;
+    /* Decoration */
+    border-spacing: 0;
+    border: 1px solid;
+    position: absolute;
+}
+
+.table-scroll thead {
+    background-color: #f1f1f1;
+    position: relative;
+    display: block;
+    width: 100%;
+    
+}
+
+.table-scroll tbody {
+    /* Position */
+    display: block;
+    position: relative;
+    width: 100%;
+    overflow-y: scroll;
+    /* Decoration */
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.table-scroll tr {
+    width: 100%;
+    display: flex;
+}
+
+.table-scroll td,
+.table-scroll th {
+    flex-basis: 100%;
+    flex-grow: 2;
+    display: block;
+    padding: 1rem;
+    text-align: left;
+}
+
+/* Other options */
+
+.table-scroll tbody tr:nth-child(2n) {
+    background-color: rgba(130, 130, 170, 0.1);
+}
+
+.body-half-screen {
+    max-height: 79vh;
+}
+
+.small-col {
+    flex-basis: 10%;
+}

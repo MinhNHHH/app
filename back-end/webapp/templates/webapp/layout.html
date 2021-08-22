@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Budget</title>
+    <link href="{% static 'webapp/draf_10.css'%}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!------ Include the above in your HEAD tag ---------->
+</head>
+
+<body>
+    <div id="border1">
+        <div id="dropdown">
+            <button onclick="myFunction()" id="dropbtn">{{username}}</button>
+            <div id="myDropdown" class="dropdown-content" style="text-decoration:none;">
+                <a href="/webapp/change_password">Change Password</a>
+                <a href="/webapp/">Logout</a>
+            </div>
+        </div>
+        <a href="/webapp/dashboard"> {% load static %} <img src = "{% static "webapp/logo.png" %}" alt = "Logo" id = "logoz" width="69" height="69"></a>
+    </div>
+    <div id="border2">
+        <ul id="box1" style="list-style-type: none; text-decoration : none; text-align: center;">
+            <li><a href="/webapp/dashboard" class="hello">Dash Board</a></li>
+            <li><a href="/webapp/inputs" class="hello">Account</a></li>
+            <li><a href="/webapp/buy" class="hello">Transaction</a></li>
+            <li><a href="/webapp/calendar" class="hello">Report</a></li>
+        </ul>
+    </div>
+    {% block body %} {% endblock %}
+</body>
+

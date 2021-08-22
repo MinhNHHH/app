@@ -1,0 +1,37 @@
+{% extends "webapp/layout.html" %} {% load static %} {% block body %}
+<script src="{% static 'webapp/buy1.js'%}"></script>
+
+<div class="nhmrvp">
+    <label for="option" style="font-size: 20px; padding: 20px">Choose a option:</label>
+    <select name="option" id="options" style="font-size: 22px; margin-right: 17px">
+        {% for i in list_service%}
+        <option value={{i}} id="{{i}}" class="idmount">{{i}}</option>
+        {% endfor %}
+    </select>
+    <input type="type" id="amount" name="monney" style="height: 2em; width: 20rem; font-size: 15px;">
+    <button style="font-size: 20px;" onclick="buy()" id = "buyz">Enter</button>
+</div>
+<table class="table-scroll small-first-col">
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Trade</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody class="body-half-screen">
+        <tr class ="event_trade">
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    var data ={{data | safe}};
+    document.getElementById("amount").value = "0";
+    var amount = document.getElementById("amount");
+    var id = document.getElementById("options");
+    var input = document.getElementById("amount");
+    enterz();
+    show_events();
+</script>
+{% endblock %}

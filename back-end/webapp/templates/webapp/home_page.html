@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>Budget</title>
+    <link href="{% static 'webapp/draf_10.css'%}" rel="stylesheet">
+    <script src="{% static 'webapp/homepage_.js'%}"></script>
+</head>
+
+<body style="background-color:bisque;">
+
+    <div class="logo123" style="background-color: #333;color: cornsilk;">
+        <h1>Budget</h1>
+    </div>
+
+    <div class="border">
+        <div class="inborder">Welcome! To get started sign up for a budget account. It’s fast easy and free. You’ll be on your way to talking charge of your money in just minutes.
+            <a href="/webapp/"> {% load static %} <img src = "{% static "webapp/logo.png" %}" alt = "Logo" id = "logoz"></a>
+        </div>
+        <div class="login">
+            <h1>Welcome!</h1>
+            <label for="username">Username</label><br>
+
+            <input type="text" id="username" name="username" style="height: 2em; width: 20rem;"><br>
+
+            <label for="username">Password</label><br>
+
+            <input type="password" id="password" name="password" style="height: 2em; width: 20rem;"><br><br>
+            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="login()" id="123" style="width: 20rem;">Login</button><br><br>
+            <div class="regis_homepage" style="text-align: center;">
+                "Don't have account?
+                <a href="/webapp/register" style="color: cornflowerblue;">Register</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var username = document.getElementById("username");
+    var password = document.getElementById("password");
+    var input = document.getElementById("password");
+    enter();
+</script>
