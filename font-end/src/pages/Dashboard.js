@@ -5,11 +5,11 @@ import { Line } from "react-chartjs-2";
 import { Chart } from "react-google-charts";
 import axios from 'axios';
 
-
+import {getSessionStorageOrDefault} from '../components/useSessionStorage'
 import LayOut from '../components/Layout'
 
 function DashBoard() {
-    const data_id = JSON.parse(sessionStorage.getItem('id'))
+    const data_id = getSessionStorageOrDefault('id',null)
     const [data_fromserver, getDataFromServer] = useState(null)
     let data_line = {
         labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],

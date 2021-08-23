@@ -3,10 +3,10 @@ import "./TranSaction.css"
 import React, { useState } from 'react'
 
 import LayOut from "../components/Layout";
-
+import {getSessionStorageOrDefault} from '../components/useSessionStorage'
 
 function TranSaction() {
-    const data_id = JSON.parse(sessionStorage.getItem('id'))
+    const data_id = getSessionStorageOrDefault('id',null)
     const [categorize, setFiled] = useState(null)
     const [money, setMoney] = useState(null)
 

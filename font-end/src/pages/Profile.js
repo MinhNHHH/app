@@ -8,11 +8,11 @@ import { Button } from 'react-bootstrap'
 import Modals from '../components/Modals'
 import LayOut from '../components/Layout'
 import InPut from '../components/Input'
-
+import {getSessionStorageOrDefault} from '../components/useSessionStorage'
 
 function ProFile() {
     const [modalShow, setModalShow] = useState(false);
-    const data_id = JSON.parse(sessionStorage.getItem('id'))
+    const data_id = getSessionStorageOrDefault('id',null)
     const [datafromserver, getDataFromServer] = useState(null)
     const [fullname, setFullName] = useState("")
     const [address, setAddress] = useState("")

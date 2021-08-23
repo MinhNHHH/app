@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import LayOut from '../components/Layout'
-
+import {getSessionStorageOrDefault} from '../components/useSessionStorage'
 
 function ChangePass() {
-    const data_id = JSON.parse(sessionStorage.getItem('id'))
+    const data_id = getSessionStorageOrDefault('id',null)
     const [currentpass, setCurrentPass] = useState(null)
     const [newpass, setNewPass] = useState(null)
     const [confirmpass, setConfirmPass] = useState(null)
