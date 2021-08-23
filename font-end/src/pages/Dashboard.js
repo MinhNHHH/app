@@ -1,4 +1,4 @@
-import "../compoments/css/DashBoard.css"
+import "./DashBoard.css"
 
 import React, { useState, useEffect } from 'react'
 import { Line } from "react-chartjs-2";
@@ -6,7 +6,7 @@ import { Chart } from "react-google-charts";
 import axios from 'axios';
 
 
-import LayOut from '../compoments/Layout'
+import LayOut from '../components/Layout'
 
 function DashBoard() {
     const data_id = JSON.parse(sessionStorage.getItem('id'))

@@ -1,8 +1,8 @@
-import "../compoments/css/TranSaction.css"
+import "./TranSaction.css"
 
 import React, { useState } from 'react'
 
-import LayOut from "../compoments/Layout";
+import LayOut from "../components/Layout";
 
 
 function TranSaction() {

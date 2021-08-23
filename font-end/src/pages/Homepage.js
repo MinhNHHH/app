@@ -1,10 +1,10 @@
-import '../compoments/css/HomePage.css';
+import './HomePage.css';
 
 
 import React from 'react'
 import { useState } from 'react'
-import { useSessionStorage } from '../compoments/useSessionStorage';
-import InPut from '../compoments/Input'
+import { useSessionStorage } from '../components/useSessionStorage';
+import InPut from '../components/Input'
 
 function HomePage() {
     const [username, setUserName] = useState(0);

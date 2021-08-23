@@ -7,7 +7,7 @@ import DashBoard from './pages/Dashboard';
 import RegisterPage from './pages/Registerpage';
 import TranSaction from  './pages/Transaction';
 import ProFile from './pages/Profile';
-import ChangePass from './pages/ChangePass';
+import ChangePass from './pages/Changepass';
 
 function App() {
   return (

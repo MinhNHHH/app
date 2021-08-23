@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import '../compoments/css/HomePage.css';
+import './HomePage.css';
 
 function RegisterPage() {
     const [username, setUserName] = useState(0);

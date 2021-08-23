@@ -1,13 +1,13 @@
-import "../compoments/css/Profile.css"
+import "./Profile.css"
 
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Button } from 'react-bootstrap'
 
-import Modals from '../compoments/Modals'
-import LayOut from '../compoments/Layout'
-import InPut from '../compoments/Input'
+import Modals from '../components/Modals'
+import LayOut from '../components/Layout'
+import InPut from '../components/Input'
 
 
 function ProFile() {
