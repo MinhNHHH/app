@@ -3,19 +3,23 @@ import "./TranSaction.css"
 import React, { useState } from 'react'
 
 import LayOut from "../components/Layout";
-import {getSessionStorageOrDefault} from '../components/useSessionStorage'
+import { getSessionStorageOrDefault } from '../components/useSessionStorage'
+import FormTransaction from "../components/Transaction/FormTransaction";
 
 function TranSaction() {
-    const data_id = getSessionStorageOrDefault('id',null)
+    const data_id = getSessionStorageOrDefault('id', null)
+    if (!data_id) {
+        window.location.replace('/')
+    }
     const [categorize, setFiled] = useState(null)
     const [money, setMoney] = useState(null)
 
-    const onFiled = (e) => {
-        setFiled(e.target.value)
+    const textFiled = (textfiled) => {
+        setFiled(textfiled)
     };
 
-    const onMoney = (e) => {
-        setMoney(e.target.value)
+    const textMoney = (textmoney) => {
+        setMoney(textmoney)
     };
 
     const buyFuntion = () => {
@@ -24,7 +28,7 @@ function TranSaction() {
             categorize: categorize,
             money: money
         })
-            .then(function (response) {                
+            .then(function (response) {
                 alert("Login success")
             })
             .catch(function (error) {
@@ -35,24 +39,13 @@ function TranSaction() {
     return (
         <>
 
-            <div className="transaction-container">
-                <LayOut username={data_id.username} title={'TRANSACTION'} id={data_id.id} />
-                <div className="transaction_contain">
-                    <div className="card-body">
-                        <form>
-                            <div className="form-group">
-                                <label for="categorizeinput">Categorize</label>
-                                <input type="text" className="form-control" id="categorizeinput" placeholder="Categorize" onChange = {onFiled}/>
-                            </div>
-                            <div className="form-group">
-                                <label for="categorizeinput">Money</label>
-                                <input type="text" className="form-control" id="moneyinput" placeholder="0" onChange = {onMoney}/>
-                            </div>
-                            <button type="submit" class="btn btn-primary" onClick = {buyFuntion}> Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+            <LayOut username={data_id.username} title={'TRANSACTION'} id={data_id.id} />
+            
+            <FormTransaction
+                onFiled = {textFiled}
+                onMoney = {textMoney}
+                clickBuy = {buyFuntion}
+            />
         </>
     )
 }

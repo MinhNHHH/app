@@ -11,8 +11,11 @@ import InPut from '../components/Input'
 import {getSessionStorageOrDefault} from '../components/useSessionStorage'
 
 function ProFile() {
-    const [modalShow, setModalShow] = useState(false);
     const data_id = getSessionStorageOrDefault('id',null)
+    if (!data_id) {
+        window.location.replace('/')
+    }
+    const [modalShow, setModalShow] = useState(false);
     const [datafromserver, getDataFromServer] = useState(null)
     const [fullname, setFullName] = useState("")
     const [address, setAddress] = useState("")

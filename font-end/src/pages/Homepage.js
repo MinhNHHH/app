@@ -1,22 +1,23 @@
-import './HomePage.css';
+import './HomePage.css'
 
-
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useSessionStorage } from '../components/useSessionStorage';
-import InPut from '../components/Input'
+
+import HeadHome from '../components/Home/HeadHome'
+import FormHome from '../components/Home/FormHome'
+
 
 function HomePage() {
-    const [username, setUserName] = useState(0);
-    const [password, setPassword] = useState(0);
+    const [username, setUserName] = useState('');
+    const [password, setPassword] = useState('');
     const [recentLogin, setrecentLogin] = useSessionStorage('recentLogin', false);
     const [id, setId] = useSessionStorage('id', null);
 
-    const onUserName = (e) => {
-        setUserName(e.target.value);
+    const onTextUser = (textuser) => {
+        setUserName(textuser);
     };
-    const onPassword = (e) => {
-        setPassword(e.target.value);
+    const onTextPass = (textpass) => {
+        setPassword(textpass);
     };
     const loginFuntion = () => {
         const axios = require('axios');
@@ -34,65 +35,16 @@ function HomePage() {
                 console.log(error);
             });
     }
-
     return (
-        <>
-            <div class="homepage">
-                <header className="header">
-                    <nav>
-                        <div class="menu-icon">
-                            <i class="fa fa-bars fa-2x"></i>
-                        </div>
-                        <div class="logo">
-                            LOGO
-                        </div>
-                    </nav>
-                </header>
-                <div className="container" >
-                    <div className="d-flex justify-content-center h-100">
-                        <div className="card">
-                            <div className="card-header">
-                                <h3>Sign In</h3>
-                                <div className="d-flex justify-content-end social_icon">
-                                    <span><i className="fab fa-facebook-square"></i></span>
-                                    <span><i className="fab fa-google-plus-square"></i></span>
-                                    <span><i className="fab fa-twitter-square"></i></span>
-                                </div>
-                            </div>
-                            <div className="card-body">
-                                <form>
-                                    <InPut
-                                        type={'text'}
-                                        placeholder={'username'}
-                                        function={onUserName}
-                                    />
-                                    <InPut
-                                        type={'password'}
-                                        placeholder={'password'}
-                                        function={onPassword}
-                                    />
+        <div className="homepage">
+            <HeadHome />
 
-                                    <div className="form-group">
-                                        <button type="button" className="btn float-right login_btn" onClick={loginFuntion}>Login</button>
-                                    </div>
-                                </form>
-                            </div>
-                            <div className="card-footer">
-                                <div className="d-flex justify-content-center links">
-                                    Don't have an account?<a href="/register">Sign Up</a>
-                                </div>
-                                <div className="d-flex justify-content-center">
-                                    <a href="#">Forgot your password?</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="flooter">
-
-            </div>
-        </>
+            <FormHome
+                onUsername={onTextUser}
+                onPassword={onTextPass}
+                clickLogin={loginFuntion}
+            />
+        </div>
     )
 }
 

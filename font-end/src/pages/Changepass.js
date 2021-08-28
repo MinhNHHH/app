@@ -1,21 +1,27 @@
 import React, { useState } from 'react'
+import { BrowserRouter as Redirect } from 'react-router-dom';
+
 import LayOut from '../components/Layout'
-import {getSessionStorageOrDefault} from '../components/useSessionStorage'
+import { getSessionStorageOrDefault } from '../components/useSessionStorage'
+import FormChange from '../components/Change/FormChange'
 
 function ChangePass() {
-    const data_id = getSessionStorageOrDefault('id',null)
-    const [currentpass, setCurrentPass] = useState(null)
-    const [newpass, setNewPass] = useState(null)
-    const [confirmpass, setConfirmPass] = useState(null)
+    const data_id = getSessionStorageOrDefault('id', null)
+    if (!data_id) {
+        window.location.replace('/')
+    }
+    const [currentpass, setCurrentPass] = useState('')
+    const [newpass, setNewPass] = useState('')
+    const [confirmpass, setConfirmPass] = useState('')
 
-    const onCurrent = (e) => {
-        setCurrentPass(e.target.value)
+    const onCurrent = (textcurpass) => {
+        setCurrentPass(textcurpass)
     }
-    const onNewpass = (e) => {
-        setNewPass(e.target.value)
+    const onNewpass = (textnewpass) => {
+        setNewPass(textnewpass)
     }
-    const onConfirm = (e) => {
-        setConfirmPass(e.target.value)
+    const onConfirm = (textconfirm) => {
+        setConfirmPass(textconfirm)
     }
 
     const changepassFunction = () => {
@@ -36,47 +42,13 @@ function ChangePass() {
     return (
         <>
             <div className="changepass">
-                <LayOut username={data_id.username} id={data_id.id} title={"CHANGE PASSWORD"} />
-                <div className="d-flex justify-content-center h-100">
-                    <div className="card">
-                        <div className="card-header">
-                            <h3>Change Password</h3>
-                            <div className="d-flex justify-content-end social_icon">
-                                <span><i className="fab fa-facebook-square"></i></span>
-                                <span><i className="fab fa-google-plus-square"></i></span>
-                                <span><i className="fab fa-twitter-square"></i></span>
-                            </div>
-                        </div>
-                        <div className="card-body">
-                            <form>
-                                <div className="input-group form-group">
-                                    <div className="input-group-prepend">
-                                        <span className="input-group-text"><i className="fas fa-user"></i></span>
-                                    </div>
-                                    <input type="password" className="form-control" placeholder="currentpassword" name="current" id="current" onChange={onCurrent} />
-
-                                </div>
-                                <div className="input-group form-group">
-                                    <div className="input-group-prepend">
-                                        <span className="input-group-text"><i className="fas fa-key"></i></span>
-                                    </div>
-                                    <input type="password" className="form-control" placeholder="newpassword" name="newpass" id="newpass" onChange={onNewpass} />
-                                </div>
-
-                                <div className="input-group form-group">
-                                    <div className="input-group-prepend">
-                                        <span className="input-group-text"><i className="fas fa-key"></i></span>
-                                    </div>
-                                    <input type="password" className="form-control" placeholder="confirmpassword" name="confirm" id="confirm" onChange={onConfirm} />
-                                </div>
-
-                                <div className="form-group">
-                                    <button type="button" className="btn float-right login_btn" onClick={changepassFunction}>Change</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                <LayOut username={data_id && data_id.username} id={data_id && data_id.id} title={"CHANGE PASSWORD"} />
+                <FormChange
+                    onChangeCurPass={onCurrent}
+                    onChangeNewPass={onNewpass}
+                    onChangeConfPass={onConfirm}
+                    clickChangePass={changepassFunction}
+                />
             </div>
         </>
     )

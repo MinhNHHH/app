@@ -10,6 +10,9 @@ import LayOut from '../components/Layout'
 
 function DashBoard() {
     const data_id = getSessionStorageOrDefault('id',null)
+    if (!data_id) {
+        window.location.replace('/')
+    }
     const [data_fromserver, getDataFromServer] = useState(null)
     let data_line = {
         labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
@@ -115,7 +118,6 @@ function DashBoard() {
                 </div>
                 <div className="linechart">
                     <p className="title"> Line chart</p>
-
                     <Line data={data_line}
                         width={'400px'}
                     />
