@@ -1,4 +1,4 @@
-from django.db.models import query
+
 from django.db.models.query_utils import Q
 from .models import Users, Transaction
 from django.shortcuts import render
@@ -8,10 +8,9 @@ from .serializers import UserAPI,LoginSerializer,RegisterSerializer,AccountSeria
 from rest_framework import status
 from werkzeug.security import check_password_hash, generate_password_hash
 from calendar import month, monthrange,month_name
-from datetime import date
 from django.utils import timezone
 from django.db.models import Avg, Count, Min, Sum,F
-import pandas as pd
+
 
 # Create your views here.
 

@@ -1,16 +1,12 @@
 from webapp.serializers import LoginSerializer
-from django.db.models import query
 from django.utils import timezone
 from api.serializers import TransactionSerializer, UserAPI,RegisterSerializer,InputSerializer,DashBoardSerializer,ChangepasswordSerializer,InformationAPISerializer
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
 from webapp.models import Information, Users,Transaction
 from rest_framework import status , generics
-from django.db.models import Avg, Count, Min, Sum,F
-from django.http import Http404
+from django.db.models import Sum
 from werkzeug.security import check_password_hash, generate_password_hash
-from knox.models import AuthToken
-from calendar import month, monthrange,month_name
+from calendar import month_name
 
 
 
