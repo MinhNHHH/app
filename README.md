@@ -1,6 +1,7 @@
 # Budget-Manager-Application
 > Budget app with Reactjs, Axios, Django -> Preview
-<img width="1266" alt="Screen Shot 2021-08-29 at 21 52 02" src="https://user-images.githubusercontent.com/53270216/131254743-f5a20622-d443-408e-a004-adde96e14889.png">
+<img width="1265" alt="Screen Shot 2021-08-29 at 21 55 21" src="https://user-images.githubusercontent.com/53270216/131254855-7de6fe24-9292-4da4-b169-e21fa9587b81.png">
+
 
 
 ## Requirement
