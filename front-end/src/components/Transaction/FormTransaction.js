@@ -2,28 +2,24 @@ import React from 'react'
 
 export default function FormTransaction(props) {
     
-    const fillFiled = (e) => {
-        props.onFiled(e.target.value)
+    const fillFiled1 = (e) => {
+        props.onFiled1(e.target.value)
     }
-    const fillMoney = (e) => {
-        props.onMoney(e.target.value)
-    }
-    const buyFuntion = () => {
-        props.clickBuy()
+    const fillFiled2 = (e) => {
+        props.onFiled2(e.target.value)
     }
     return (
         <div className="transaction_contain">
             <div className="card-body">
                 <form>
                     <div className="form-group">
-                        <label for="categorizeinput">Categorize</label>
-                        <input type="text" className="form-control" id="categorizeinput" placeholder="Categorize" onChange={fillFiled} />
+                        <label for="categorizeinput">{props.title1}</label>
+                        <input type="text" className="form-control" id="categorizeinput" onChange={fillFiled1} />
                     </div>
                     <div className="form-group">
-                        <label for="categorizeinput">Money</label>
-                        <input type="number" className="form-control" id="moneyinput" placeholder = "0" onChange={fillMoney} />
+                        <label for="categorizeinput">{props.title2}</label>
+                        <input type="number" className="form-control" id="moneyinput"  onChange={fillFiled2} />
                     </div>
-                    <button type="submit" class="btn btn-primary" onClick={buyFuntion}> Submit</button>
                 </form>
             </div>
         </div>

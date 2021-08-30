@@ -52,7 +52,6 @@ function LayOut({ username, title, id }) {
                         <Dropdown.Toggle variant="success" id="dropdown-basic">
                             {username}
                         </Dropdown.Toggle>
-
                         <Dropdown.Menu>
                             <Dropdown.Item href={`/profile/${id}`}>Profile</Dropdown.Item>
                             <Dropdown.Item href={`/changepassword/${id}`}>Change Password</Dropdown.Item>

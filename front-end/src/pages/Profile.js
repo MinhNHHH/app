@@ -7,7 +7,7 @@ import { Button } from 'react-bootstrap'
 
 import Modals from '../components/Modals'
 import LayOut from '../components/Layout'
-import InPut from '../components/Input'
+
 import {getSessionStorageOrDefault} from '../components/useSessionStorage'
 
 function ProFile() {

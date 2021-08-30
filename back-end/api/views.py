@@ -120,6 +120,7 @@ class InputAPI(generics.GenericAPIView):
     queryset_2 = Transaction.objects.all()
     queryset_1 = Users.objects.all()
     serializer_class = InputSerializer
+
     def post(self, request,pk):
         query_db = Users.objects.get(pk = pk)
         serializer = InputSerializer(data = request.data)
@@ -184,16 +185,12 @@ class TransactionAPI(generics.GenericAPIView):
     
     def post(self,request,pk):
         query_db = Users.objects.get(pk = pk)
-        time = timezone.now()
         serializer = TransactionSerializer(data = request.data)
         if serializer.is_valid():
-            money_trade = Transaction.objects.filter(user_id_id = query_db.id,time_trade__month = time.month, time_trade__year = time.year).exclude(categorize__in = ['income','budget']).aggregate(Sum('money'))
-            moneytrade = 0 if money_trade['money__sum'] is None else money_trade['money__sum']
-            money_income = Transaction.objects.filter(user_id_id = query_db.id,categorize = "income", time_trade__month__in = [i for i in range(1,13)],time_trade__year = time.year).aggregate(Sum('money'))
-            query_db.balance = money_income['money__sum'] + moneytrade
-            query_db.save()
             if query_db.balance > serializer.data['money']:
                 Transaction.objects.create(user_id = query_db, categorize = serializer.data['categorize'], money = -serializer.data['money'])
+                query_db.balance = int(query_db.balance) - serializer.data['money']
+                query_db.save()
                 return Response({
                     "id": query_db.id,
                     "data": serializer.data,

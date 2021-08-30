@@ -12,8 +12,8 @@ class RegisterSerializer(serializers.Serializer):
     confirm = serializers.CharField(max_length = 100)
 
 class InputSerializer(serializers.Serializer):
-    budget = serializers.IntegerField(default = 0)
-    income = serializers.IntegerField(default = 0)
+    budget = serializers.IntegerField()
+    income = serializers.IntegerField()
 
 class DashBoardSerializer(serializers.Serializer):
     model = Transaction
