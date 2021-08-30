@@ -121,19 +121,21 @@ function DashBoard() {
                     </div>
                 </div>
                 <div className="linechart">
-                    <p className="title"> Line chart</p>
+                    <p className="title"> Tracking Money </p>
                     <Line data={data_line}
                         width={'400px'}
                     />
                 </div>
                 <div className="piechart">
-                    <p className="title">Money</p>
+                    <p className="title"> Percentage Cost</p>
                     <Chart
                         height={'300px'}
-                        width={'600px'}
+                        width={'550px'}
                         chartType="PieChart"
                         loader={<div>Loading Chart</div>}
                         data={data_pie}
+
+
                     />
                 </div>
                 <div className="table-container">

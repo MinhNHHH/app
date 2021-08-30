@@ -1,11 +1,12 @@
 .linechart {
     background-color: white;
     width: 600px;
+    left: 13%;
+    top: 2%;
+    border-radius: 10px;
     position: relative;
-    margin-left: 160px;
-    margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: auto;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 .title {
@@ -14,35 +15,36 @@
     color: white;
     text-align: left;
     font-size: 30px;
-    position: relative;
+    border-radius: 10px;
 }
 
 .piechart {
     background-color: white;
     width: 600px;
     position: relative;
-    padding: 0px;
-    margin-left: 160px;
-    margin-top: 10px;
-    margin-right: 0px;
-    margin-bottom: 0px;
+    left: 13%;
+    top: 3%;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 .containborder {
     position: relative;
     height: 100px;
-    margin-left: 150px;
+    left: 12%;
     display: inline-flex;
 }
 
 .containborder-body {
     background-color: white;
-    margin-left: 40px;
-    margin-top: 10px;
     position: relative;
     height: 100px;
     width: 300px;
-    border-style: outset
+    border-style: outset;
+    margin-left: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    top: 10px;
 }
 
 .row_content {
@@ -61,21 +63,27 @@
     color: white;
     width: 100%;
     text-align: center;
+    border: 1px solid black;
 }
 
-.content_table-tr{
+.content_table-tr {
     position: absolute;
     width: 100%;
     padding: 22.5px;
     text-align: center;
 }
-.table-container{
+
+.table-container {
     position: relative;
-    width: 485px;
-    left: 770px;
-    bottom: 625px;
-    height: 620px;
+    left: 62%;
+    bottom: 72%;
+    width: 38%;
+    height: 75%;
+    border: 1px solid black;
+    border-radius: 10px;
+
 }
+
 .my-custom-scrollbar {
     position: relative;
     overflow: auto;
@@ -84,13 +92,13 @@
 .table-wrapper-scroll-y {
     display: block;
 }
-.history{
+
+.history {
     margin: 0px;
     background-color: black;
     color: white;
     font-size: 30px;
 }
-
 
 .table-scroll {
     height: 94%;
@@ -99,7 +107,7 @@
     empty-cells: show;
     /* Decoration */
     border-spacing: 0;
-    border: 1px solid;
+    border-radius: 10px;
     position: absolute;
 }
 
@@ -108,7 +116,6 @@
     position: relative;
     display: block;
     width: 100%;
-    
 }
 
 .table-scroll tbody {
@@ -126,8 +133,7 @@
     display: flex;
 }
 
-.table-scroll td,
-.table-scroll th {
+.table-scroll td, .table-scroll th {
     flex-basis: 100%;
     flex-grow: 2;
     display: block;

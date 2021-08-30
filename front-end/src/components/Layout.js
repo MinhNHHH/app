@@ -15,34 +15,35 @@ function LayOut({ username, title, id }) {
                 <div className="logo">
                     LOGO
                     </div>
-            </div>
-            <div className="document">
-                <div className="catalog">
-                    <Link
-                        to={{
-                            pathname: `/dashboard/${id}`,
-                        }}
-                        style={{ textDecoration: 'none', color: 'white' }}
-                    >Dashboard</Link>
-                </div>
-                <div className="catalog">
-                    <Link
-                        to={{
-                            pathname: `/transaction/${id}`,
-                        }}
-                        style={{ textDecoration: 'none', color: 'white' }}
-                    >Transaction</Link>
-                </div>
-                <div className="catalog">
-                    <Link
-                        to={{
-                            pathname: `/dashboard/${id}`,
-                        }}
-                        style={{ textDecoration: 'none', color: 'white' }}
-                    >Report</Link>
-                </div>
+                <div className="document">
+                    <div className="catalog">
+                        <Link
+                            to={{
+                                pathname: `/dashboard/${id}`,
+                            }}
+                            style={{ textDecoration: 'none', color: 'white' }}
+                        >Dashboard</Link>
+                    </div>
+                    <div className="catalog">
+                        <Link
+                            to={{
+                                pathname: `/transaction/${id}`,
+                            }}
+                            style={{ textDecoration: 'none', color: 'white' }}
+                        >Transaction</Link>
+                    </div>
+                    <div className="catalog">
+                        <Link
+                            to={{
+                                pathname: `/dashboard/${id}`,
+                            }}
+                            style={{ textDecoration: 'none', color: 'white' }}
+                        >Report</Link>
+                    </div>
 
+                </div>
             </div>
+
             <div className='tuto'>
                 <p className='title1'>
                     {title}
