@@ -1,10 +1,13 @@
-from webapp.serializers import LoginSerializer
-from django.utils import timezone
-from api.serializers import TransactionSerializer, UserAPI,RegisterSerializer,InputSerializer,DashBoardSerializer,ChangepasswordSerializer,InformationAPISerializer
-from rest_framework.response import Response
 from webapp.models import Information, Users,Transaction
-from rest_framework import status , generics
+from webapp.serializers import LoginSerializer
+from api.serializers import TransactionSerializer, UserAPI,RegisterSerializer,InputSerializer,DashBoardSerializer,ChangepasswordSerializer,InformationAPISerializer
+
 from django.db.models import Sum
+from django.utils import timezone
+
+from rest_framework.response import Response
+from rest_framework import status , generics
+
 from werkzeug.security import check_password_hash, generate_password_hash
 from calendar import month_name
 
@@ -147,13 +150,11 @@ class DashBoardAPI(generics.GenericAPIView):
     def get(self,request, pk):
         time = timezone.now()
         query_db = Users.objects.get(pk = pk)
-        #query_transaction = Transaction.objects.filter(user_id_id = query_db.id)
-        #serializer = DashBoardSerializer(query_transaction, many = True)
         money_budget = Transaction.objects.filter(user_id_id = query_db.id, time_trade__month = time.month, time_trade__year = time.year, categorize = "budget").aggregate(Sum('money'))
         money_income = Transaction.objects.filter(user_id_id = query_db.id,categorize = "income", time_trade__month__in = [i for i in range(1,13)],time_trade__year = time.year).values("time_trade__month").annotate(sum = Sum('money'))
         money_trade = Transaction.objects.filter(user_id_id = query_db.id,time_trade__month = time.month, time_trade__year = time.year).exclude(categorize__in = ['income','budget']).aggregate(Sum('money'))
         money_filed = Transaction.objects.filter(user_id_id = query_db.id, time_trade__month = time.month, time_trade__year = time.year).exclude(categorize__in = ['income','budget']).values("categorize").annotate(sum = Sum('money'))
-        filter_trade = Transaction.objects.filter(user_id_id = query_db.id, time_trade__month = time.month, time_trade__year = time.year).values("categorize","money","time_trade")
+        filter_trade = Transaction.objects.filter(user_id_id = query_db.id, time_trade__month = time.month, time_trade__year = time.year).exclude(categorize__in = ['income','budget']).values("categorize","money","time_trade")
         data_his = [j for j in filter_trade]
         data_money = [i for i in money_filed]
         for i in data_his:

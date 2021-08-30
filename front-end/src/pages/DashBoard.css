@@ -93,6 +93,7 @@
 
 
 .table-scroll {
+    height: 94%;
     width: 100%;
     display: block;
     empty-cells: show;

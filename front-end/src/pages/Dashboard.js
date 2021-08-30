@@ -61,13 +61,15 @@ function DashBoard() {
             data_pie = [...data_pie, [data_fromserver.data['money_filed'][i].categorize, -data_fromserver.data['money_filed'][i].sum]]
         }
         sums = data_fromserver.data['history'].reduce((total, cur) => total + cur.money, 0)
+        console.log(data_fromserver.data['balance'])
+        console.log(data_fromserver.data['trade'])
     }
 
 
     return (
         <>
             <div className="dashcontainer">
-                <LayOut username={data_id.username} title={'FINANCE DASHBOARD'} id={data_id.id} />
+                <LayOut username={data_id.username} title={'BUDGET DASHBOARD'} id={data_id.id} />
                 <div className='containborder'>
                     <div className="containborder-body">
                         <table className="row_content">
@@ -112,7 +114,7 @@ function DashBoard() {
                             </thead>
                             <tbody className="content_table">
                                 <tr className="content_table-tr">
-                                    abcdejsf
+                                    0 VNĐ
                             </tr>
                             </tbody>
                         </table>
