@@ -1,6 +1,7 @@
 # Budget-Manager-Application
 > Budget app with Reactjs, Axios, Django -> Preview
-<img width="1266" alt="Screen Shot 2021-08-30 at 11 05 44" src="https://user-images.githubusercontent.com/53270216/131283887-73b1fd9b-5aec-4a48-85ba-5df89d62b928.png">
+<img width="1267" alt="Screen Shot 2021-08-30 at 18 12 01" src="https://user-images.githubusercontent.com/53270216/131330741-e599efe8-c26d-4dd1-b1f8-a465b355eda0.png">
+
 
 ## Requirement
 1. django== 3.2.3
@@ -28,7 +29,5 @@
 - Count percentage costs
 
 #Updating
-- Add incomes/costs to month
-- Authen
 - ...
 
