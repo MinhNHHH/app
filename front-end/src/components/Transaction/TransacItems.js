@@ -20,6 +20,8 @@ export default function TransacItems(props) {
     };
 
     const buyFuntion = () => {
+        // Use BASE_URL for IP or domain
+
         const axios = require('axios');
         axios.post(`http://127.0.0.1:8000/api/transaction/${props.data_id}/`, {
             categorize: categorize,

@@ -11,6 +11,7 @@ import ChangePass from './pages/Changepass';
 
 
 function App() {
+  console.log("eeeeeeeeeeeeeeeeeeenv: ", process.env.REACT_APP_BASE_API);
   return (
     <>
       <Router>

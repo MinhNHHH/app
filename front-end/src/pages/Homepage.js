@@ -5,6 +5,7 @@ import { useSessionStorage } from '../components/useSessionStorage';
 
 import HeadHome from '../components/Home/HeadHome'
 import FormHome from '../components/Home/FormHome'
+import axios from "axios";
 
 
 function HomePage() {
@@ -20,8 +21,7 @@ function HomePage() {
         setPassword(textpass);
     };
     const loginFuntion = () => {
-        const axios = require('axios');
-        axios.post("http://127.0.0.1:8000/api/login/", {
+        axios.post(process.env.REACT_APP_BASE_API+"/api/login/", {
             username: username,
             password: password
         })
