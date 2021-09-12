@@ -6,7 +6,7 @@ export default function Modals(props) {
         <>
             <Modal
                 {...props}
-                size="lg"
+                size="md"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
             >
@@ -23,6 +23,7 @@ export default function Modals(props) {
                     <Button onClick={props.onHide}>Close</Button>
                 </Modal.Footer>
             </Modal>
+            
         </>
     )
 }

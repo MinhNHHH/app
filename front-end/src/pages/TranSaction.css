@@ -1,12 +1,57 @@
-.transaction_contain{
+.transaction_contain {
     position: relative;
     height: 400px;
-    width: 400px;
-    left: 30%;
-    top: 70px;
+    border: 1px black solid;
 }
 
-.Addnewitems{
+.transaction_contain-input {
+    height: 60px;
+    width: 100%;
+    padding: 10px;
+}
+
+
+.trainsaction_contain-option {
+    padding: 10px;
+    height: 65%
+}
+
+.trainsaction_contain-option-border {
+    height: 90%;
+    border: 1px solid black;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.trainsaction_contain-option-sqaure {
+    border: 1px solid black;
+    height: 100px;
+    overflow: hidden;
+}
+.trainsaction_contain-option-sqaure_active{
+    height: 100px;
+    border-style: outset;
+}
+
+.trainsaction_contain-option-border>.trainsaction_contain-option-sqaure {
+    
+    margin: 20px;
+    width: 100px;
+}
+
+.trainsaction_contain-option-border>.trainsaction_contain-option-sqaure_active {
+    
+    margin: 20px;
+    width: 100px;
+}
+
+
+.transaction_contain-input input{
+    padding : 0px
+}
+
+.Addnewitems {
     position: relative;
-    left: 13%;   
+    left: 13%;
 }

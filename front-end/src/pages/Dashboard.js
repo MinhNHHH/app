@@ -15,6 +15,7 @@ function DashBoard() {
     }
 
     const [data_fromserver, getDataFromServer] = useState(null)
+
     let data_line = {
         labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
 
@@ -28,7 +29,9 @@ function DashBoard() {
             }
         ]
     };
+
     let data_pie;
+    
     const getData = async () => {
         try {
             await axios.get(`http://127.0.0.1:8000/api/dashboard/${data_id.id}/`)
@@ -61,8 +64,7 @@ function DashBoard() {
             data_pie = [...data_pie, [data_fromserver.data['money_filed'][i].categorize, -data_fromserver.data['money_filed'][i].sum]]
         }
         sums = data_fromserver.data['history'].reduce((total, cur) => total + cur.money, 0)
-        console.log(data_fromserver.data['balance'])
-        console.log(data_fromserver.data['trade'])
+        console.log(data_fromserver.data['history'])
     }
 
 
@@ -87,6 +89,7 @@ function DashBoard() {
                                 }
                             </tbody>
                         </table>
+                        
                     </div>
                     <div className="containborder-body">
                         <table className="row_content">

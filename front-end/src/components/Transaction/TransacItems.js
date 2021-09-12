@@ -34,12 +34,13 @@ export default function TransacItems(props) {
             });
     }
 
-
+    let lists_service = ['Eat','Shopping','Learn','Book']
     const child = <FormTransaction
-        onFiled1={textFiled}
+        clickFiled={textFiled}
         onFiled2={textMoney}
-        title1 = "Categorize"
-        title2 = "Money"
+        title1 = "Value"
+        title2 = "Note"
+        list_service = {lists_service}
     />
     return (
         <div>

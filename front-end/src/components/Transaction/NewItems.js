@@ -30,18 +30,20 @@ function NewItems(props) {
                 console.log(error);
             });
     }
+    let list_servicez = ['Income','Investment']
     const child = <FormTransaction
         onFiled1={onIncome}
         onFiled2={onBudget}
-        title1 = "Income"
-        title2 = "Budget"
+        title1 = "Value"
+        title2 = "Note"
+        list_service = {list_servicez}
     />
-    console.log(income)
+
     return (
         <div>
             <Button variant="primary" onClick={() => setModalShowAdd(true)}>
                 +
-                </Button>
+            </Button>
             <Modals
                 show={modelShowAdd}
                 onHide={() => setModalShowAdd(false)}
